@@ -1,34 +1,7 @@
 import "./styles.css";
-import { styled } from "@stitches/react";
 import { useState } from "react";
 import Button from "./Button";
-
-const FlexContainer = styled("div", {
-  display: "flex",
-
-  variants: {
-    direction: {
-      row: {
-        flexDirection: "row"
-      },
-      column: {
-        flexDirection: "column"
-      }
-    },
-    justifyContent: {
-      center: {
-        justifyContent: "center"
-      },
-      between: {
-        justifyContent: "space-between"
-      }
-    }
-  },
-  defaultVariants: {
-    direction: "row",
-    justifyContent: "between"
-  }
-});
+import { FlexContainer } from "./FlexContainer";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
