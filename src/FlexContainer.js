@@ -19,10 +19,19 @@ export const FlexContainer = styled("div", {
       between: {
         justifyContent: "space-between"
       }
+    },
+    alignItems: {
+      center: {
+        alignItems: "center"
+      },
+      between: {
+        alignItems: "space-between"
+      }
     }
   },
   defaultVariants: {
     direction: "row",
-    justifyContent: "between"
+    justifyContent: "between",
+    alignItems: "center"
   }
 });
