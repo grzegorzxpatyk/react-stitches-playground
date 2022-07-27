@@ -5,6 +5,7 @@ import { useState } from "react";
 const Button = styled("button", {
   all: "unset",
   padding: ".8rem 1.2rem",
+  margin: ".4rem",
   borderRadius: "1.6rem",
   fontFamily: '"JetBrains Mono", monospace',
   cursor: "pointer",
@@ -28,6 +29,15 @@ const Button = styled("button", {
         "&:hover": {
           background: "#c6c6c6"
         }
+      },
+      outlined: {
+        background: "transparent",
+        backdropFilter: "blur(2px)",
+        color: "#22181c",
+        border: "1px solid #11181c",
+        "&:hover": {
+          backdropFilter: "blur(4px)"
+        }
       }
     }
   },
@@ -36,20 +46,64 @@ const Button = styled("button", {
   }
 });
 
+const FlexContainer = styled("div", {
+  display: "flex",
+
+  variants: {
+    direction: {
+      row: {
+        flexDirection: "row"
+      },
+      column: {
+        flexDirection: "column"
+      }
+    },
+    justifyContent: {
+      center: {
+        justifyContent: "center"
+      },
+      between: {
+        justifyContent: "space-between"
+      }
+    }
+  },
+  defaultVariants: {
+    direction: "row",
+    justifyContent: "between"
+  }
+});
+
 export default function App() {
   const [counter, setCounter] = useState(0);
 
   return (
     <div className="App">
-      <Button
-        onClick={() => {
-          setCounter((counter) => counter + 1);
-        }}
-      >
-        Click me!
-      </Button>
+      <FlexContainer>
+        <Button
+          onClick={() => {
+            setCounter((counter) => counter + 1);
+          }}
+        >
+          increase
+        </Button>
+        <Button
+          variant="light"
+          onClick={() => {
+            setCounter((counter) => counter - 1);
+          }}
+        >
+          decrease
+        </Button>
+        <Button
+          variant="outlined"
+          onClick={() => {
+            setCounter(0);
+          }}
+        >
+          reset
+        </Button>
+      </FlexContainer>
       <p>You've clicked me {counter} times</p>
-      <Button variant="light">Something</Button>
     </div>
   );
 }
