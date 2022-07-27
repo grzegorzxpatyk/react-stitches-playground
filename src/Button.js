@@ -7,7 +7,7 @@ const Button = styled("button", {
   borderRadius: "1.6rem",
   fontFamily: '"JetBrains Mono", monospace',
   cursor: "pointer",
-  transition: "transform .05s ease-in-out",
+  transition: "transform .08s ease-in-out",
   "&:active": {
     transform: "translate(0, 2px) scale(0.95)"
   },
@@ -30,11 +30,13 @@ const Button = styled("button", {
       },
       outlined: {
         background: "transparent",
-        backdropFilter: "blur(2px)",
+        backdropFilter: "blur(1px)",
+        transition:
+          "transform .08s ease-in-out backdrop-filter .15s ease-in-out",
         color: "#22181c",
         border: "1px solid #11181c",
         "&:hover": {
-          backdropFilter: "blur(4px)"
+          backdropFilter: "blur(2px)"
         }
       }
     }
