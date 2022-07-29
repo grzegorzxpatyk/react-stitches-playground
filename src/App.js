@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import { FlexContainer } from "./FlexContainer";
 import { globalCss } from "@stitches/react";
+import { TextInput } from "./TextInput";
 
 const globalStyles = globalCss({
   "*": { margin: 0, padding: 0 },
@@ -15,6 +16,7 @@ const globalStyles = globalCss({
 
 export default function App() {
   const [counter, setCounter] = useState(0);
+  const [inputText, setInputText] = useState("");
   globalStyles();
   return (
     <div className="App">
@@ -50,6 +52,14 @@ export default function App() {
           </Button>
         </FlexContainer>
         <p>You've clicked me {counter} times</p>
+        <TextInput
+          type="text"
+          value={inputText}
+          onChange={(e) => setInputText(e.currentTarget.value)}
+        />
+        <p>
+          What's on your mind? <strong>{inputText}</strong>
+        </p>
       </FlexContainer>
     </div>
   );

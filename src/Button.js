@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "./stitches/styled";
 
 const Button = styled("button", {
   all: "unset",
@@ -16,14 +16,14 @@ const Button = styled("button", {
     variant: {
       dark: {
         background: "#333333",
-        color: "#e3e3e3",
+        color: "$primaryLight",
         "&:hover": {
           background: "#444444"
         }
       },
       light: {
         background: "#e3e3e3",
-        color: "#22181c",
+        color: "$primaryDark",
         "&:hover": {
           background: "#c6c6c6"
         }
@@ -33,7 +33,7 @@ const Button = styled("button", {
         backdropFilter: "blur(1px)",
         transition:
           "transform .08s ease-in-out, backdrop-filter .15s ease-in-out, background-color 0.3s ease-in-out",
-        color: "#22181c",
+        color: "$primaryDark",
         border: "1px solid #11181c",
         "&:hover": {
           backdropFilter: "blur(2px)",
